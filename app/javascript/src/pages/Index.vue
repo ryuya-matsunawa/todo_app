@@ -1,22 +1,24 @@
 <template lang="pug">
-.todo-page
-  p
-    | TODOリスト表示用ページ
-  table
-    thead
-      tr
-        th タスク名
-        th ステータス
-    tbody
-      template(v-for="todo in todos")
-        tr
-          td
-            | {{ todo.title }}
-          td
-            | {{ todo.finished }}
-  button
-    router-link(to="/detail/1")
-      | detail
+div
+  .todo-table
+    md-table(v-model='todos' md-sort='title' md-sort-order='asc' md-card md-fixed-header)
+      md-table-toolbar
+        h1.md-title Todo
+      md-table-row(slot='md-table-row' slot-scope='{ item }' @click="goDetail(item.id)")
+        md-table-cell.w-10(md-label='State' md-sort-by='status')
+          .status.d-flex-center(:class="item.status")
+            | {{ item.status }}
+        md-table-cell.w-30(md-label='Limit' md-sort-by='limit') {{ item.limit }}
+        md-table-cell.w-30(md-label='Title' md-sort-by='title') {{ item.title }}
+        md-table-cell.w-20
+          .d-flex-end-x
+            button.font-m(v-if="item.status !== 'complete'")
+              font-awesome-icon(icon="check-circle")
+            button.font-m()
+              font-awesome-icon(icon="pen")
+            button.font-m()
+              font-awesome-icon(icon="trash-alt")
+
 </template>
 
 <script>
@@ -42,6 +44,9 @@ export default {
         console.log(error);
       });
     },
+    goDetail(id) {
+      this.$router.push('/detail/' + id);
+    }
   }
 }
 </script>

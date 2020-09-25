@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  finished: false
+  limit: MyString
+  status: MyString
 
 two:
   title: MyString
-  finished: false
+  limit: MyString
+  status: MyString
