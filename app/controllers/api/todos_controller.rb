@@ -3,7 +3,7 @@ class Api::TodosController < ApplicationController
   # GET /todos
   def index
     # 後々のため、更新順で返します
-    @todos = Todo.order('updated_at DESC')
+    @todos = Todo.order('updated_at')
   end
 
   # POST /todos
@@ -31,7 +31,7 @@ class Api::TodosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_params
       params.fetch(:todo, {}).permit(
-        :title, :finished
+        :title, :limit, :status
       )
     end
 end

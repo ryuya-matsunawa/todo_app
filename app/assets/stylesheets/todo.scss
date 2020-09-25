@@ -1,0 +1,42 @@
+.todo-table {
+  width: 70%;
+  margin: 0 auto;
+}
+.font-m {
+  font-size: 2vw !important;
+}
+.d-flex-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.d-flex-end-x {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+.status {
+  border: 1px solid;
+  border-radius: 2vw;
+  &.normal {
+    color: red;
+  }
+  &.doing {
+    color: green;
+  }
+  &.complete {
+    color: purple;
+  }
+}
+.w-10 {
+  width: 10% !important;
+}
+.w-20 {
+  width: 20% !important;
+}
+.w-30 {
+  width: 30% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
