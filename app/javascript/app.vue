@@ -1,7 +1,6 @@
 <template lang="pug">
   #app
-    p 
-      | {{ message }}
+    router-view
 </template>
 
 <script>
