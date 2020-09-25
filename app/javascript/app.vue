@@ -1,21 +1,19 @@
 <template lang="pug">
   #app
+    Header
     router-view
 </template>
 
 <script>
+import Header from "./src/components/Header";
+
 export default {
-  data() {
-    return {
-      message: "Hello Vue!"
-    }
+  components: {
+    Header
   }
 }
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+
 </style>
